@@ -35,7 +35,7 @@ public abstract class MovingObject : MonoBehaviour {
 
     protected virtual void OnCollisionEnter2D(Collision2D col)
     {
-        if (col.gameObject.tag == "Enemy")
+        if (col.gameObject.tag != "Floor" && !col.collider.isTrigger)
         {
             speed *= -1;
         }

@@ -4,8 +4,6 @@ using System.Collections;
 public class Teleportation : MonoBehaviour {
     public Transform thisPortal;
     public Transform outPortal;
-    public float differYPos;
-
 
 	// Use this for initialization
 	void Start () 
@@ -27,19 +25,14 @@ public class Teleportation : MonoBehaviour {
     }
 
     protected void Teleport(Collision2D other)
-    {   
-        
+    {
         // Switch destination collider as trigger in purpose to not teleport back 
         // (OnCollisionEnter2D of destination doesn't work for collider if it is trigger)
         outPortal.GetComponent<EdgeCollider2D>().isTrigger = true;
 
-        differYPos = outPortal.position.y + other.transform.position.y;
-
         other.transform.position = new Vector3(
-            outPortal.position.x, 
-
-            // save difference between portal and other y position
-            differYPos,
+            outPortal.position.x,
+            outPortal.position.y,
             other.transform.position.z);        
     }
 
