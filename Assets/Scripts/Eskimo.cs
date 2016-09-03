@@ -2,8 +2,8 @@
 using System.Collections;
 
 public class Eskimo : MonoBehaviour {
-	public float speed = 8f;
-    public float jumpForce = 3000f;
+	public float speed = 10f;
+    public float jumpForce;
     public int score = 0;
     public float posX, posY;
 	public bool grounded = false;
@@ -19,6 +19,7 @@ public class Eskimo : MonoBehaviour {
 		rig = GetComponent<Rigidbody2D>();	
         posX = rig.position.x;
         posY = rig.position.y;
+        jumpForce = 3000f;
 	}
 	
 	// Update is called once per frame
