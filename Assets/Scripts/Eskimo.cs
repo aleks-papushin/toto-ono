@@ -3,6 +3,7 @@ using System.Collections;
 
 public class Eskimo : MonoBehaviour {
 	public float speed = 8f;
+    public float jumpForce = 3000f;
     public int score = 0;
     public float posX, posY;
 	public bool grounded = false;
@@ -33,7 +34,7 @@ public class Eskimo : MonoBehaviour {
 			Input.GetKeyDown(KeyCode.Space)) &&
 			grounded) 
 		{
-			rig.AddForce (new Vector2 (0, 700f));
+            rig.AddForce (new Vector2 (0, jumpForce));
 		}
 
 		if (move > 0 && facingRight) 

@@ -30,7 +30,7 @@ GameObject:
   m_Layer: 8
   m_Name: groundCheck
   m_TagString: Untagged
-  m_Icon: {fileID: 5721338939258241955, guid: 0000000000000000d000000000000000, type: 0}
+  m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -54,8 +54,8 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 112532}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -8.38, y: 3.73, z: 0}
-  m_LocalScale: {x: 0.06858482, y: 0.06858482, z: 0.06858482}
+  m_LocalPosition: {x: -1.45, y: 3.32, z: 0}
+  m_LocalScale: {x: 0.13821399, y: 0.13821399, z: 0.13821399}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children:
   - {fileID: 455890}
@@ -69,7 +69,7 @@ Rigidbody2D:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 112532}
   m_UseAutoMass: 0
-  m_Mass: 1
+  m_Mass: 0.5
   m_LinearDrag: 0
   m_AngularDrag: 0.05
   m_GravityScale: 1
