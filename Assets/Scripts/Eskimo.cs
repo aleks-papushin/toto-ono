@@ -43,8 +43,7 @@ public class Eskimo : MonoBehaviour {
         else if (move < 0 && !facingRight) 
         {
 			Flip();
-		}
-			
+		}			
     }
 
 	void Flip()
