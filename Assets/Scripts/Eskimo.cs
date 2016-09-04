@@ -3,6 +3,7 @@ using System.Collections;
 
 public class Eskimo : MonoBehaviour {
 	public float speed = 10f;
+    public int lives = 3;
     public float jumpForce;
     public int score = 0;
     public float posX, posY;
@@ -19,15 +20,14 @@ public class Eskimo : MonoBehaviour {
 		rig = GetComponent<Rigidbody2D>();	
         posX = rig.position.x;
         posY = rig.position.y;
-        jumpForce = 3000f;
+        jumpForce = 2000f;
 	}
 	
 	// Update is called once per frame
 	void Update () {
 		grounded = Physics2D.OverlapCircle(groundCheck.position, groundRadius, whatIsGround);
 
-		float move;
-		move = Input.GetAxis("Horizontal");
+		float move = Input.GetAxis("Horizontal");
 		rig.velocity = new Vector2(move * speed, rig.velocity.y);
 
 		if ((Input.GetKeyDown(KeyCode.UpArrow) || 
@@ -38,6 +38,7 @@ public class Eskimo : MonoBehaviour {
             rig.AddForce (new Vector2 (0, jumpForce));
 		}
 
+        // Check for looking forward
 		if (move > 0 && facingRight) 
         {
 			Flip();			
@@ -48,12 +49,26 @@ public class Eskimo : MonoBehaviour {
 		}			
     }
 
+    protected void OnCollisionEnter2D(Collision2D col)
+    {
+        if (col.gameObject.tag == "Enemy")
+        {
+            lives--;
+            // Hurt();
+        }
+    }
+
+    protected void Hurt()
+    {
+        // Implement for lifes subtracting and temporarily invulnerability
+    }
+
 	void Flip()
 	{
 		facingRight = !facingRight;
 		Vector3 theScale = transform.localScale;
 		theScale.x *= -1;
-		transform.localScale = theScale;
+        transform.localScale = theScale;
 	}
 
     // Just example. Will be replaced later

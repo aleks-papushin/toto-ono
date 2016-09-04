@@ -8,6 +8,7 @@ TagManager:
   - Enemy
   - Teleport
   - Floor
+  - HurtingFloor
   layers:
   - Default
   - TransparentFX
