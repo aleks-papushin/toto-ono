@@ -13,7 +13,7 @@ GameObject:
   - 58: {fileID: 5854886}
   - 114: {fileID: 11444992}
   m_Layer: 0
-  m_Name: Furball
+  m_Name: furball
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -104,6 +104,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 1
+  lives: 1
   moveRight: 0
   groundCheck: {fileID: 455890}
   whatIsGround:
@@ -111,6 +112,8 @@ MonoBehaviour:
     m_Bits: 0
   posX: 0
   posY: 0
+  timer: 0
+  testingHurtAmount: 0
 --- !u!212 &21220676
 SpriteRenderer:
   m_ObjectHideFlags: 1

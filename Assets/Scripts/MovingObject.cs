@@ -12,20 +12,13 @@ public abstract class MovingObject : MonoBehaviour {
     public float timer;
     protected Rigidbody2D rig;
 
-    private BoxCollider2D boxCollider;
-
 	// Use this for initialization
 	protected virtual void Start () 
     {
-        boxCollider = GetComponent<BoxCollider2D>();
         rig = GetComponent<Rigidbody2D>();
         posX = rig.position.x;
         posY = rig.position.y;
 	}
-
-    protected virtual void Update ()
-    {
-    }
 
     protected virtual void Move()
     {
@@ -45,15 +38,5 @@ public abstract class MovingObject : MonoBehaviour {
         {
             speed *= -1;
         }
-    }
-
-    protected virtual void OnCollisionExit2D(Collision2D col)
-    {
-        //Debug.Log("OnCollisionExit registered");
-        if (col.gameObject.tag == "HurtingFloor")
-        {
-            Debug.Log("OnCollisionExit with HurtingFloor registered");
-            lives--;
-        }        
     }
 }

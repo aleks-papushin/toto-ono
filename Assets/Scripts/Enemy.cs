@@ -9,7 +9,11 @@ public class Enemy : MovingObject {
 
     // If 1 life remains object frezees, uncosious turns to true
     protected bool unconsious = false;
-    	
+
+    public Enemy()
+    {
+    }
+
 	// Update is called once per frame
     protected void Update () 
     {
@@ -28,17 +32,19 @@ public class Enemy : MovingObject {
         }
 	}
 
-    protected void OnCollisionEnter2D(Collision2D col)
+    protected override void OnCollisionEnter2D(Collision2D col)
     {        
         // Change direction if collided with any object excepting Floor
-        if (col.gameObject.tag != "Floor" && !col.collider.isTrigger)
+        if (col.gameObject.tag != "Floor" &&
+            col.gameObject.tag != "Teleport" && 
+            !col.collider.isTrigger)
         {
             speed *= -1;
         }
     }
 
     protected void OnCollisionExit2D(Collision2D col)
-    {
+    {        
         Hurt(col);
     }
 
