@@ -1,6 +1,8 @@
 ﻿using UnityEngine;
 using System.Collections;
 
+// TODO Implement jumping enemy derrived class
+
 public class Enemy : MovingObject {
     public int testingHurtAmount = 0;
 
@@ -39,7 +41,7 @@ public class Enemy : MovingObject {
             col.gameObject.tag != "Teleport" && 
             !col.collider.isTrigger)
         {
-            speed *= -1;
+            moveRight = !moveRight;
         }
     }
 

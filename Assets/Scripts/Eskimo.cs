@@ -1,6 +1,8 @@
 ﻿using UnityEngine;
 using System.Collections;
 
+// TODO Think about and implement player states (like invulnerability after hurting, death etc.)
+
 public class Eskimo : MonoBehaviour {
 	public float speed = 10f;
     public int lives = 3;

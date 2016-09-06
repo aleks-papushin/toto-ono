@@ -1,6 +1,8 @@
 ﻿using UnityEngine;
 using System.Collections;
 
+// TODO Think about improve teleportation - so objects entring to In and Out portals at the same time teleport successfully
+
 public class Teleportation : MonoBehaviour {
     public Transform thisPortal;
     public Transform outPortal;

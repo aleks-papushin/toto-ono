@@ -36,7 +36,7 @@ public abstract class MovingObject : MonoBehaviour {
     {        
         if (col.gameObject.tag != "Floor" && !col.collider.isTrigger)
         {
-            speed *= -1;
+            moveRight = !moveRight;
         }
     }
 }
