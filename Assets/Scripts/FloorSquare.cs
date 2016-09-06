@@ -1,0 +1,44 @@
+﻿using UnityEngine;
+using System.Collections;
+
+// TODO Think and implement FloorTiangle and general class for floors
+
+public class FloorSquare : MonoBehaviour {
+    public float timer = 0;
+
+    protected float hurtingTime = 0.2f;
+
+	// Use this for initialization
+	void Start () {
+	
+	}
+	
+	// Update is called once per frame
+	void Update () {
+        // Check if enough time for hurting
+        CheckHurtTime();        	
+	}
+
+    // Allow to change tag if hurtingTime expired
+    protected void CheckHurtTime()
+    {
+        if (tag == "HurtingFloor")
+        {
+            timer += Time.deltaTime;
+            if (timer > hurtingTime)
+            {
+                tag = "Floor";
+                timer = 0;
+            }
+        }
+    }
+
+    void OnCollisionEnter2D(Collision2D col)
+    {
+        // If collision with player and he placed below - turn Floor to HurtingFloor for enemy hurting
+        if (col.gameObject.tag == "Player" && col.transform.position.y < transform.position.y)
+        {
+            tag = "HurtingFloor";
+        }
+    }
+}
