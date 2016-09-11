@@ -1,12 +1,12 @@
 ﻿using UnityEngine;
 using System.Collections;
 
+// TODO In purpose of trying to improve collision with enemies modify colliders form
 // TODO Think and implement FloorTiangle and general class for floors
 
 public class FloorSquare : MonoBehaviour {
-    public float timer = 0;
-
-    protected float hurtingTime = 0.2f;
+    protected float timer = 0;
+    protected float hurtingTime = 0.5f;
 
 	// Use this for initialization
 	void Start () {
@@ -15,21 +15,24 @@ public class FloorSquare : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        // Check if enough time for hurting
-        CheckHurtTime();        	
+        //if (tag == "HurtingFloor")
+        if (gameObject.layer == 10)
+        {
+            // Check if enough time for hurting
+            CheckHurtTime();
+        }
+                   	
 	}
 
     // Allow to change tag if hurtingTime expired
     protected void CheckHurtTime()
     {
-        if (tag == "HurtingFloor")
+        timer += Time.deltaTime;
+        if (timer > hurtingTime)
         {
-            timer += Time.deltaTime;
-            if (timer > hurtingTime)
-            {
-                tag = "Floor";
-                timer = 0;
-            }
+            //tag = "Floor";
+            gameObject.layer = 0;
+            timer = 0;
         }
     }
 
@@ -38,7 +41,9 @@ public class FloorSquare : MonoBehaviour {
         // If collision with player and he placed below - turn Floor to HurtingFloor for enemy hurting
         if (col.gameObject.tag == "Player" && col.transform.position.y < transform.position.y)
         {
-            tag = "HurtingFloor";
+            //Debug.Log("HurtingFloor activated!");
+            //tag = "HurtingFloor";
+            gameObject.layer = 10;
         }
     }
 }

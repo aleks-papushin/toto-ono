@@ -3,7 +3,7 @@ using System.Collections;
 
 public abstract class MovingObject : MonoBehaviour {
     public float speed = 1f;
-    public int lives = 1;
+    public int lives = 2;
     public bool moveRight = true;
     public Transform groundCheck;
     public LayerMask whatIsGround;

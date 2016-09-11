@@ -12,7 +12,7 @@ GameObject:
   - 50: {fileID: 5061256}
   - 58: {fileID: 5854886}
   - 114: {fileID: 11444992}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Furball
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -27,7 +27,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 455890}
-  m_Layer: 8
+  m_Layer: 9
   m_Name: groundCheck
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -54,7 +54,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 112532}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1.45, y: 3.32, z: 0}
+  m_LocalPosition: {x: -10.835185, y: -2.879634, z: 0}
   m_LocalScale: {x: 0.13821399, y: 0.13821399, z: 0.13821399}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children:
@@ -76,7 +76,7 @@ Rigidbody2D:
   m_IsKinematic: 0
   m_Interpolate: 0
   m_SleepingMode: 1
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
   m_Constraints: 4
 --- !u!58 &5854886
 CircleCollider2D:
@@ -104,7 +104,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 1
-  lives: 1
+  lives: 2
   moveRight: 0
   groundCheck: {fileID: 455890}
   whatIsGround:
@@ -113,7 +113,9 @@ MonoBehaviour:
   posX: 0
   posY: 0
   timer: 0
-  testingHurtAmount: 0
+  usualSprite: {fileID: 21300000, guid: 215d771a524781c44bbf53b77afff9c7, type: 3}
+  unconsiousSprite: {fileID: 21300000, guid: 88e4b4e204e74f9409de511224c00509, type: 3}
+  justHurted: 0
 --- !u!212 &21220676
 SpriteRenderer:
   m_ObjectHideFlags: 1

@@ -8,6 +8,7 @@ public abstract class Spawner : MonoBehaviour {
     public bool objMoveRight = true;
     public int maxObjects;
     public float spawnInterval;
+    public float spawnDelay; 
 
     protected float timer = 0f;    
     protected int objectsCounter = 0; // for simple tracking 

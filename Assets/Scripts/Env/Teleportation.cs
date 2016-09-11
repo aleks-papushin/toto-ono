@@ -7,7 +7,7 @@ using System.Collections;
 public class Teleportation : MonoBehaviour {
     public Transform thisPortal;
     public Transform outPortal;
-    public bool shouldPlayerBeTeleported = true;
+    public bool teleportPlayer = true;
 
     // Use this for initialization
     void Start () 
@@ -24,7 +24,7 @@ public class Teleportation : MonoBehaviour {
     protected void OnCollisionEnter2D(Collision2D other) 
     {
         // Check if we can teleport this object
-        if (other.gameObject.tag == "Player" && shouldPlayerBeTeleported)
+        if (CheckIfShouldTeleport(other))
         {
             // Teleport other collider
             Teleport(other);
@@ -34,6 +34,11 @@ public class Teleportation : MonoBehaviour {
             // Allow object that we do not want to teleport pass through collider
             GetComponent<EdgeCollider2D>().isTrigger = true;
         }
+    }
+
+    protected bool CheckIfShouldTeleport(Collision2D other)
+    {
+        return (other.gameObject.tag == "Player" && teleportPlayer) || other.gameObject.tag != "Player";
     }
 
     protected void Teleport(Collision2D other)
