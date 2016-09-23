@@ -54,7 +54,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 4000013390839788}
   m_Layer: 0
-  m_Name: EnemyTeleport
+  m_Name: Enemy Teleport
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -67,7 +67,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1000014084631680}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -34.42, y: 6.44, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children: []
@@ -80,8 +80,8 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1000014157160292}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -35.26, y: -9.57, z: 0}
-  m_LocalScale: {x: 0.40061182, y: 0.08111109, z: 0.40061182}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children: []
   m_Father: {fileID: 4000013390839788}
@@ -93,7 +93,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1000014262684850}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 3.143206, y: -1.69, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children:
@@ -144,7 +144,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   thisPortal: {fileID: 4000013376860040}
   outPortal: {fileID: 4000011400708146}
-  shouldPlayerBeTeleported: 0
+  teleportPlayer: 1
 --- !u!114 &114000011583556682
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -158,4 +158,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   thisPortal: {fileID: 4000011400708146}
   outPortal: {fileID: 4000013376860040}
-  shouldPlayerBeTeleported: 0
+  teleportPlayer: 1

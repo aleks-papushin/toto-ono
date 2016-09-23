@@ -14,7 +14,7 @@ GameObject:
   - 257: {fileID: 25788830}
   - 114: {fileID: 114000012386586984}
   m_Layer: 0
-  m_Name: FloorSquare
+  m_Name: Floor Square
   m_TagString: Floor
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -27,7 +27,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 102524}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -10.1898575, y: -3.09, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children: []
@@ -63,7 +63,7 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Size: {x: 0.43, y: 0.5}
+  m_Size: {x: 0.4, y: 0.5}
 --- !u!212 &21201282
 SpriteRenderer:
   m_ObjectHideFlags: 1
