@@ -2,7 +2,7 @@
 using System.Collections;
 
 // TODO Add variable to know should we switch enemy direction
-
+//TODO: refactor this to the base class
 public class TeleportationEnemy : MonoBehaviour
 {
 

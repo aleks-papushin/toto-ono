@@ -1,6 +1,8 @@
 ﻿using UnityEngine;
 using System.Collections;
 
+//TODO: remove the class
+
 public abstract class MovingObject : MonoBehaviour {
     public float speed = 1f;
     public int lives = 2;
@@ -22,6 +24,7 @@ public abstract class MovingObject : MonoBehaviour {
 
     protected virtual void Move()
     {
+        //TODO: use physics instead of translation
         if (moveRight)
         {
             transform.Translate(Vector3.right * speed * Time.deltaTime);
@@ -33,7 +36,8 @@ public abstract class MovingObject : MonoBehaviour {
     }
 
     protected virtual void OnCollisionEnter2D(Collision2D col)
-    {        
+    {
+        //TODO: use Unity physics
         if (col.gameObject.tag != "Floor" && !col.collider.isTrigger)
         {
             moveRight = !moveRight;

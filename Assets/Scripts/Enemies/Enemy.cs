@@ -36,6 +36,7 @@ public class Enemy : MovingObject {
         }
     }
 
+    //TODO: Use physics
     protected override void OnCollisionEnter2D(Collision2D col)
     {
         // Change direction if collided with any object excepting Floor
