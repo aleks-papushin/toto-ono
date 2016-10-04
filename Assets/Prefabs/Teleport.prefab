@@ -56,7 +56,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 197938}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 9.92, z: 0}
+  m_LocalPosition: {x: 22.94, y: -0.46, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children: []
@@ -69,7 +69,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 131512}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: -21.975216, y: -10.674213, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children:
@@ -84,7 +84,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 108552}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: -12.66, y: -4.11, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children: []
@@ -103,8 +103,8 @@ EdgeCollider2D:
   m_UsedByEffector: 0
   m_Offset: {x: 0, y: 0}
   m_Points:
-  - {x: -0.08980942, y: 5.2299376}
-  - {x: -0.0332489, y: -0.14356709}
+  - {x: 0, y: 5}
+  - {x: 0, y: 0}
 --- !u!68 &6895926
 EdgeCollider2D:
   m_ObjectHideFlags: 1
@@ -116,10 +116,10 @@ EdgeCollider2D:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_UsedByEffector: 0
-  m_Offset: {x: 0.97, y: 0}
+  m_Offset: {x: 0, y: 0}
   m_Points:
-  - {x: -0.9700012, y: -1.0066938}
-  - {x: -0.96379393, y: 53.922897}
+  - {x: 0, y: 0}
+  - {x: 0, y: 8}
 --- !u!114 &11430612
 MonoBehaviour:
   m_ObjectHideFlags: 1
