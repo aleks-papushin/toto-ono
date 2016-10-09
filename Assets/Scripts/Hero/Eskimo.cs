@@ -39,7 +39,7 @@ public class Eskimo : MonoBehaviour {
         float horizontal = Input.GetAxis("Horizontal");
         HandleInput();
         HandleMovement(horizontal);
-        HandleLayers();			
+        //HandleLayers();			
         
         // Check for invulnerability
         if (invulnerable)
@@ -77,14 +77,14 @@ public class Eskimo : MonoBehaviour {
             if (jump)
             {
                 rig.AddForce(new Vector2(0, jumpForce));
-                playerAnimator.SetTrigger("jump");
+                playerAnimator.SetBool("jump", true);
             }
         }
 
         // If player falling down
         if (rig.velocity.y < 0)
         {
-            playerAnimator.ResetTrigger("jump");
+            playerAnimator.SetBool("jump", false);
             playerAnimator.SetBool("landing", true);
         }
 
