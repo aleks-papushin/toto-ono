@@ -6,6 +6,7 @@ public abstract class Spawner : MonoBehaviour {
 
     // Allow to define spawned object default direction
     public bool objMoveRight = true;
+
     public int maxObjects;
     public float spawnInterval;
     public float spawnDelay; 

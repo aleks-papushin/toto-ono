@@ -1,18 +1,18 @@
 fileFormatVersion: 2
 guid: f1f58f5c852e0604282875a2f83f20a0
-timeCreated: 1475440485
+timeCreated: 1475613694
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName:
-    21300000: EskimoSpriteSheet_0
-    21300002: EskimoSpriteSheet_1
-    21300004: EskimoSpriteSheet_2
-    21300006: EskimoSpriteSheet_3
-    21300008: EskimoSpriteSheet_4
-    21300010: EskimoSpriteSheet_5
-    21300012: EskimoSpriteSheet_6
-    21300014: EskimoSpriteSheet_7
-    21300016: EskimoSpriteSheet_8
+    21300000: face
+    21300002: hood
+    21300004: left_shoulder
+    21300006: right_shoulder
+    21300008: left_arm
+    21300010: right_arm
+    21300012: body
+    21300014: left_leg
+    21300016: right_leg
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0
@@ -62,7 +62,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: EskimoSpriteSheet_0
+      name: face
       rect:
         serializedVersion: 2
         x: 296
@@ -75,7 +75,7 @@ TextureImporter:
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: EskimoSpriteSheet_1
+      name: hood
       rect:
         serializedVersion: 2
         x: 401
@@ -88,7 +88,7 @@ TextureImporter:
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: EskimoSpriteSheet_2
+      name: left_shoulder
       rect:
         serializedVersion: 2
         x: 675
@@ -101,7 +101,7 @@ TextureImporter:
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: EskimoSpriteSheet_3
+      name: right_shoulder
       rect:
         serializedVersion: 2
         x: 829
@@ -114,7 +114,7 @@ TextureImporter:
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: EskimoSpriteSheet_4
+      name: left_arm
       rect:
         serializedVersion: 2
         x: 659
@@ -127,7 +127,7 @@ TextureImporter:
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: EskimoSpriteSheet_5
+      name: right_arm
       rect:
         serializedVersion: 2
         x: 819
@@ -140,7 +140,7 @@ TextureImporter:
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: EskimoSpriteSheet_6
+      name: body
       rect:
         serializedVersion: 2
         x: 221
@@ -153,7 +153,7 @@ TextureImporter:
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: EskimoSpriteSheet_7
+      name: left_leg
       rect:
         serializedVersion: 2
         x: 585
@@ -166,7 +166,7 @@ TextureImporter:
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: EskimoSpriteSheet_8
+      name: right_leg
       rect:
         serializedVersion: 2
         x: 764
