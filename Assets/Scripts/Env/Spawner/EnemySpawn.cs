@@ -25,24 +25,26 @@ public class EnemySpawn : Spawner {
         else if (objectsCounter == 0)
         {
             InstantiateObject();
-            objectsCounter++;
             timer += Time.deltaTime;
         }
         else if (objectsCounter < maxObjects)
         {
+            
             if (timer > spawnInterval)
             {
                 InstantiateObject();
                 timer = 0;
             }
             timer += Time.deltaTime;    
-        }       
+        }
+        
     }
 
     void InstantiateObject()
     {
         Rigidbody2D obj = Instantiate(objPrefab, gameObject.transform.position, gameObject.transform.rotation) as Rigidbody2D;
-        obj.GetComponent<MovingObject>().moveRight = objMoveRight;
+        obj.GetComponent<Enemy1>().moveRight = objMoveRight;
         objectsCounter++;
+        Debug.Log("objectsCounter: " + objectsCounter + " maxObjects: " + maxObjects);
     }
 }

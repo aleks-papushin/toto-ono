@@ -1,24 +1,52 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-// TODO Implement jumping enemy derrived class
+// TODO Think about and implement general class
+// TODO Implement jumping enemy class
 
-public class Enemy : MovingObject {
+public class Enemy1 : MonoBehaviour {
+    public float speed;
+    public int lives = 2;
+    public bool moveRight = true;
+    public Transform groundCheck;
+    public LayerMask whatIsGround;
+    public float posX, posY;
 
-    public Sprite usualSprite;
-    public Sprite unconsiousSprite;
-    SpriteRenderer sr;
+    public float timer;
+    protected Rigidbody2D rig;
+    protected SpriteRenderer[] sprites;
+    private Animator enemyAnimator;
 
+    public bool facingRight = true;
     public bool justHurted = false;
     protected float hurtCooldown = 0.2f; // in seconds
 
     // If 1 life remains object frezees, uncosious turns to true
     protected bool unconsious = false;
 
-    protected override void Start()
+    protected void Awake()
     {
-        sr = GetComponent<SpriteRenderer>();
-        sr.sprite = usualSprite;
+        speed = 2f;
+    }
+
+    protected void Start()
+    {
+        rig = GetComponent<Rigidbody2D>();
+        posX = rig.position.x;
+        posY = rig.position.y;
+
+        sprites = GetComponentsInChildren<SpriteRenderer>();
+
+        enemyAnimator = GetComponent<Animator>();
+
+        // Flip sprites if obect goes left at start
+        if (!moveRight)
+        {
+            facingRight = false;
+            Vector3 theScale = transform.localScale;
+            theScale.x *= -1;
+            transform.localScale = theScale;
+        }        
     }
 
     protected void Update () 
@@ -36,6 +64,18 @@ public class Enemy : MovingObject {
         }
     }
 
+    protected virtual void Move()
+    {
+        if (moveRight)
+        {
+            rig.velocity = new Vector2(speed, rig.velocity.y);
+        }
+        else
+        {
+            rig.velocity = new Vector2(-speed, rig.velocity.y);
+        }
+    }
+
     protected void OnCollisionEnter2D(Collision2D col)
     {
         // Change direction if collided with any object excepting Floor
@@ -44,13 +84,13 @@ public class Enemy : MovingObject {
             !col.collider.isTrigger)
         {
             moveRight = !moveRight;
-            //Flip();
+            Flip();
         }
 
         // If taken collision from nearest flor that was not previously collided with
         if (!justHurted && col.gameObject.tag == "HurtingFloor")
         {
-            Debug.Log("Collision with hurtingFloor!");
+            //Debug.Log("Collision with hurtingFloor!");
             Hurt();
         }
 
@@ -66,7 +106,7 @@ public class Enemy : MovingObject {
         //if (!justHurted && col.gameObject.tag == "HurtingFloor")
         if (!justHurted && col.gameObject.layer == 10)
             {
-            Debug.Log("Collision with hurtingFloor!");
+            //Debug.Log("Collision with hurtingFloor!");
             Hurt();
         }
     }
@@ -82,29 +122,27 @@ public class Enemy : MovingObject {
             if (lives == 1)
             {
                 unconsious = true;
-                sr.sprite = unconsiousSprite;
+                //sr.sprite = unconsiousSprite;
                 tag = "UnconsciousEnemy";
+                enemyAnimator.SetBool("unconscious", true);
             }
         }
         else
         {
             lives++;
             unconsious = false;
-            sr.sprite = usualSprite;
+            //sr.sprite = usualSprite;
             tag = "Enemy";
+            enemyAnimator.SetBool("unconscious", false);
         }
     }
 
     protected void Flip()
     {
-        Debug.Log("In Flip()");
         facingRight = !facingRight;
-        foreach (SpriteRenderer spriteRend in sprites)
-        {
-            Vector3 theScale = spriteRend.transform.localScale;
-            theScale.x *= -1;
-            spriteRend.transform.localScale = theScale;
-        }
+        Vector3 theScale = transform.localScale;
+        theScale.x *= -1;
+        transform.localScale = theScale;
     }
 
     protected void JustHurtCheck()

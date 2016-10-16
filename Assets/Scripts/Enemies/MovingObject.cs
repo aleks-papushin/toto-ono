@@ -11,6 +11,9 @@ public abstract class MovingObject : MonoBehaviour {
 
     public float timer;
     protected Rigidbody2D rig;
+    protected SpriteRenderer[] sprites;
+
+    public bool facingRight = true;
 
 	// Use this for initialization
 	protected virtual void Start () 
@@ -18,7 +21,9 @@ public abstract class MovingObject : MonoBehaviour {
         rig = GetComponent<Rigidbody2D>();
         posX = rig.position.x;
         posY = rig.position.y;
-	}
+
+        
+    }
 
     protected virtual void Move()
     {
@@ -29,14 +34,6 @@ public abstract class MovingObject : MonoBehaviour {
         else
         {
             transform.Translate(Vector3.left * speed * Time.deltaTime);
-        }
-    }
-
-    protected virtual void OnCollisionEnter2D(Collision2D col)
-    {        
-        if (col.gameObject.tag != "Floor" && !col.collider.isTrigger)
-        {
-            moveRight = !moveRight;
         }
     }
 }

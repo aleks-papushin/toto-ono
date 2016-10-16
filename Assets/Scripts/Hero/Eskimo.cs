@@ -3,6 +3,7 @@ using System.Collections;
 using UnityEngine.SceneManagement;
 
 // TODO Think about and implement player states (like invulnerability after hurting, death etc.)
+// Think about all moving objects implement the same class or interface
 
 public class Eskimo : MonoBehaviour {
 	public float speed = 10f;
@@ -23,12 +24,14 @@ public class Eskimo : MonoBehaviour {
     private bool invulnerable = false;
 
 	private Rigidbody2D rig;
+    private SpriteRenderer[] sprites;
     private Animator playerAnimator;
 
 	// Use this for initialization
 	void Start () {
 		rig = GetComponent<Rigidbody2D>();	
         playerAnimator = GetComponent<Animator>();
+        sprites = GetComponentsInChildren<SpriteRenderer>();
         posX = rig.position.x;
         posY = rig.position.y;
         //jumpForce = 1500f;
@@ -39,7 +42,6 @@ public class Eskimo : MonoBehaviour {
         float horizontal = Input.GetAxis("Horizontal");
         HandleInput();
         HandleMovement(horizontal);
-        //HandleLayers();			
         
         // Check for invulnerability
         if (invulnerable)
@@ -82,7 +84,7 @@ public class Eskimo : MonoBehaviour {
         }
 
         // If player falling down
-        if (rig.velocity.y < 0)
+        if (rig.velocity.y < -0.99f)
         {
             playerAnimator.SetBool("jump", false);
             playerAnimator.SetBool("landing", true);
@@ -97,18 +99,6 @@ public class Eskimo : MonoBehaviour {
         {
             Flip();
         }
-    }
-
-    protected void HandleLayers()
-    {
-        if (!grounded)
-        {
-            playerAnimator.SetLayerWeight(1, 1);
-        }
-        else
-        {
-            playerAnimator.SetLayerWeight(1, 0);
-        }        
     }
 
     protected void OnCollisionEnter2D(Collision2D col)
@@ -154,9 +144,12 @@ public class Eskimo : MonoBehaviour {
     protected void Blink()
     {
         blinkingTimer += Time.deltaTime;
-        if (blinkingTimer > 0.15f) 
+        if (blinkingTimer > 0.15f) // maybe replace this hardcode later
         {
-            GetComponent<SpriteRenderer>().enabled = !GetComponent<SpriteRenderer>().enabled;
+            foreach (SpriteRenderer renderer in sprites)
+            {
+                renderer.enabled = !renderer.enabled;
+            }
             blinkingTimer = 0;
         }
     }

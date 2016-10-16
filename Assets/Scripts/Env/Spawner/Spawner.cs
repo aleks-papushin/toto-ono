@@ -14,7 +14,4 @@ public abstract class Spawner : MonoBehaviour {
     protected float timer = 0f;    
     protected int objectsCounter = 0; // for simple tracking 
     protected ArrayList objects = new ArrayList(); // for advanced tracking
-    
-
-    
 }
